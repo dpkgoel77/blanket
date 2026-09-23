@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plush & Loom | Luxury & Cozy Blankets</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        warmbeige: '#F5EBE0',
+                        terracotta: '#D5896F',
+                        warmbrown: '#4A3B32',
+                        sand: '#E3D5CA',
+                        softamber: '#E8A87C'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #4A3B32;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E3D5CA;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D5896F;
+        }
+    </style>
+</head>
+<body class="bg-cream text-warmbrown antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-warmbeige transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="#" class="flex items-center gap-2 text-2xl font-serif font-bold tracking-wider text-warmbrown">
+                    <span class="w-8 h-8 rounded-full bg-terracotta inline-flex items-center justify-center text-white text-sm"><i class="fa-solid fa-feather"></i></span>
+                    Plush & Loom
+                </a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#themes" class="hover:text-terracotta transition-colors">Themes</a>
+                <a href="#diagram" class="hover:text-terracotta transition-colors">Anatomy</a>
+                <a href="#catalog" class="hover:text-terracotta transition-colors">Collections</a>
+                <a href="#vip-signup" class="hover:text-terracotta transition-colors">VIP Club</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#vip-signup" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-warmbrown text-cream text-sm font-medium hover:bg-terracotta transition-all shadow-sm">
+                    Join VIP
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-warmbrown hover:text-terracotta focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-cream border-b border-warmbeige shadow-lg py-6 px-6 transition-all">
+            <nav class="flex flex-col space-y-4 text-lg font-medium">
+                <a href="#themes" class="mobile-link hover:text-terracotta">Themes</a>
+                <a href="#diagram" class="mobile-link hover:text-terracotta">Anatomy</a>
+                <a href="#catalog" class="mobile-link hover:text-terracotta">Collections</a>
+                <a href="#vip-signup" class="mobile-link hover:text-terracotta">VIP Club</a>
+                <div class="pt-4 border-t border-warmbeige">
+                    <a href="#vip-signup" class="mobile-link block w-full text-center py-3 rounded-full bg-warmbrown text-cream font-medium">Join VIP</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-warmbeige/50 to-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-sand/60 text-warmbrown text-xs font-semibold tracking-widest uppercase">
+                        Artisanal Comfort & Luxury
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight text-warmbrown">
+                        Wrap Yourself in <span class="italic text-terracotta">Unrivaled</span> Warmth.
+                    </h1>
+                    <p class="text-lg text-warmbrown/80 max-w-xl mx-auto lg:mx-0">
+                        Crafted with ethically sourced fibers and timeless weaving traditions. Designed to transform your living space into a sanctuary of peace and cozy elegance.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#catalog" class="w-full sm:w-auto px-8 py-4 rounded-full bg-terracotta text-white font-medium hover:bg-warmbrown transition-all shadow-md text-center">
+                            Explore Collections
+                        </a>
+                        <a href="#diagram" class="w-full sm:w-auto px-8 py-4 rounded-full bg-sand/80 text-warmbrown font-medium hover:bg-sand transition-all text-center">
+                            Discover Layers
+                        </a>
+                    </div>
+                    <!-- Trust metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-warmbeige/60 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-warmbrown">100%</p>
+                            <p class="text-xs text-warmbrown/70">Organic Materials</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-warmbrown">4.9★</p>
+                            <p class="text-xs text-warmbrown/70">Over 15k Reviews</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-warmbrown">Free</p>
+                            <p class="text-xs text-warmbrown/70">Global Shipping</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative backdrop blob -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-sand rounded-full filter blur-3xl opacity-75 -z-10"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-terracotta/20 rounded-full filter blur-3xl opacity-75 -z-10"></div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4">
+                                <img src="https://placehold.co/400x500/E3D5CA/4A3B32?text=Nordic+Cloud" alt="Nordic Blanket" class="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/400x300/F5EBE0/4A3B32?text=Sherpa+Trim" alt="Sherpa Blanket" class="rounded-2xl shadow-xl w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="space-y-4 pt-8">
+                                <img src="https://placehold.co/400x300/D5896F/FFFFFF?text=Terracotta+Weave" alt="Terracotta Blanket" class="rounded-2xl shadow-xl w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/400x500/E8A87C/FFFFFF?text=Cashmere+Touch" alt="Cashmere Blanket" class="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Themes Showcase Section -->
+    <section id="themes" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-terracotta text-sm font-semibold tracking-widest uppercase">Aesthetic Collections</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-warmbrown mt-2">Curated Visual Themes</h2>
+                <p class="text-warmbrown/70 mt-3">Find the perfect blanket aesthetic that aligns with your interior design philosophy.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Theme 1: Minimalist Nordic -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-warmbeige/40 border border-warmbeige transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="https://placehold.co/600x600/E3D5CA/4A3B32?text=Minimalist+Nordic" alt="Minimalist Nordic Theme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-warmbrown/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="absolute top-4 right-4 bg-cream/90 text-warmbrown text-xs font-semibold px-3 py-1.5 rounded-full">Clean & Airy</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif font-bold text-warmbrown">Minimalist Nordic</h3>
+                        <p class="text-warmbrown/70 text-sm mt-2">Rooted in Scandinavian simplicity with neutral tones, breathable textures, and subtle waffle weaves.</p>
+                        <ul class="mt-4 space-y-2 text-xs text-warmbrown/80">
+                            <li><i class="fa-solid fa-check text-terracotta mr-2"></i> Organic Cotton & Linen blends</li>
+                            <li><i class="fa-solid fa-check text-terracotta mr-2"></i> Monochromatic palette</li>
+                        </ul>
+                        <button onclick="filterCatalog('Nordic')" class="mt-6 inline-flex items-center text-sm font-semibold text-terracotta hover:text-warmbrown transition-colors">
+                            View Theme Blankets <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Theme 2: Boho Chic -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-warmbeige/40 border border-warmbeige transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="https://placehold.co/600x600/D5896F/FFFFFF?text=Boho+Chic" alt="Boho Chic Theme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-warmbrown/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="absolute top-4 right-4 bg-cream/90 text-warmbrown text-xs font-semibold px-3 py-1.5 rounded-full">Fringe & Texture</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif font-bold text-warmbrown">Boho Chic</h3>
+                        <p class="text-warmbrown/70 text-sm mt-2">Expressive patterns, terracotta accents, handmade tassels, and earthy tassels designed for free spirits.</p>
+                        <ul class="mt-4 space-y-2 text-xs text-warmbrown/80">
+                            <li><i class="fa-solid fa-check text-terracotta mr-2"></i> Terracotta & Rust tones</li>
+                            <li><i class="fa-solid fa-check text-terracotta mr-2"></i> Hand-knotted fringe details</li>
+                        </ul>
+                        <button onclick="filterCatalog('Boho')" class="mt-6 inline-flex items-center text-sm font-semibold text-terracotta hover:text-warmbrown transition-colors">
+                            View Theme Blankets <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Theme 3: Cozy Cabin -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg bg-warmbeige/40 border border-warmbeige transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="https://placehold.co/600x600/4A3B32/FFFFFF?text=Cozy+Cabin" alt="Cozy Cabin Theme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-warmbrown/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="absolute top-4 right-4 bg-cream/90 text-warmbrown text-xs font-semibold px-3 py-1.5 rounded-full">Heavy & Warm</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif font-bold text-warmbrown">Cozy Cabin</h3>
+                        <p class="text-warmbrown/70 text-sm mt-2">Ultra-plush sherpa linings, heavy insulating weaves, and rich browns built for cold winter evenings.</p>
+                        <ul class="mt-4 space-y-2 text-xs text-warmbrown/80">
+                            <li><i class="fa-solid fa-check text-terracotta mr-2"></i> Dual-layer Sherpa insulation</li>
+                            <li><i class="fa-solid fa-check text-terracotta mr-2"></i> Deep earth browns & charcoals</li>
+                        </ul>
+                        <button onclick="filterCatalog('Cabin')" class="mt-6 inline-flex items-center text-sm font-semibold text-terracotta hover:text-warmbrown transition-colors">
+                            View Theme Blankets <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Blanket Customizer / Material Layers Diagram Section -->
+    <section id="diagram" class="py-20 bg-warmbeige/30 border-y border-warmbeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-terracotta text-sm font-semibold tracking-widest uppercase">Unmatched Engineering</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-warmbrown mt-2">Anatomy of a Plush & Loom Blanket</h2>
+                <p class="text-warmbrown/70 mt-3">Click on any layer below to explore how we engineer the ultimate tactile sleeping and lounging experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Visual Diagram Stack -->
+                <div class="lg:col-span-6 flex flex-col space-y-4">
+                    <!-- Layer 1 -->
+                    <div onclick="selectLayer(1)" id="layer-card-1" class="cursor-pointer p-6 rounded-2xl bg-cream border-2 border-terracotta shadow-md transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="w-10 h-10 rounded-full bg-terracotta text-white flex items-center justify-center font-bold text-sm">01</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-warmbrown">Cashmere Touch Exterior</h4>
+                                    <p class="text-xs text-warmbrown/70">Silk-spun organic fibers</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-terracotta layer-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- Layer 2 -->
+                    <div onclick="selectLayer(2)" id="layer-card-2" class="cursor-pointer p-6 rounded-2xl bg-cream border-2 border-transparent shadow-sm transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="w-10 h-10 rounded-full bg-warmbeige text-warmbrown flex items-center justify-center font-bold text-sm">02</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-warmbrown">Microfiber Fill</h4>
+                                    <p class="text-xs text-warmbrown/70">Featherlight thermal retention</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-warmbrown/40 layer-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- Layer 3 -->
+                    <div onclick="selectLayer(3)" id="layer-card-3" class="cursor-pointer p-6 rounded-2xl bg-cream border-2 border-transparent shadow-sm transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="w-10 h-10 rounded-full bg-warmbeige text-warmbrown flex items-center justify-center font-bold text-sm">03</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-warmbrown">Organic Cotton Core</h4>
+                                    <p class="text-xs text-warmbrown/70">Breathable structural weave</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-warmbrown/40 layer-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- Layer 4 -->
+                    <div onclick="selectLayer(4)" id="layer-card-4" class="cursor-pointer p-6 rounded-2xl bg-cream border-2 border-transparent shadow-sm transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="w-10 h-10 rounded-full bg-warmbeige text-warmbrown flex items-center justify-center font-bold text-sm">04</span>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-warmbrown">Sherpa Lining Bottom</h4>
+                                    <p class="text-xs text-warmbrown/70">Maximum heat trapping fluff</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-warmbrown/40 layer-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Dynamic Layer Info Panel -->
+                <div class="lg:col-span-6 bg-cream p-8 sm:p-10 rounded-3xl shadow-xl border border-warmbeige relative overflow-hidden">
+                    <div id="layer-info-1" class="layer-info space-y-6">
+                        <span class="inline-block px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold uppercase tracking-wider">Top Layer</span>
+                        <h3 class="text-3xl font-serif font-bold text-warmbrown">Cashmere Touch Exterior</h3>
+                        <p class="text-warmbrown/80 leading-relaxed">
+                            Our proprietary blend of long-staple organic cotton and sustainable modal delivers the ultra-soft, buttery texture of authentic cashmere without any animal byproduct or maintenance hassle.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-warmbeige">
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Texture</p>
+                                <p class="font-semibold text-warmbrown">Silky Smooth</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Sourcing</p>
+                                <p class="font-semibold text-warmbrown">Fair Trade Organic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layer-info-2" class="layer-info hidden space-y-6">
+                        <span class="inline-block px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold uppercase tracking-wider">Insulation Layer</span>
+                        <h3 class="text-3xl font-serif font-bold text-warmbrown">Microfiber Fill</h3>
+                        <p class="text-warmbrown/80 leading-relaxed">
+                            Engineered down-alternative microfibers trap warm air pockets efficiently while remaining completely hypoallergenic, moisture-wicking, and washer-safe.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-warmbeige">
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Weight</p>
+                                <p class="font-semibold text-warmbrown">Featherlight (350 GSM)</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Allergy Rating</p>
+                                <p class="font-semibold text-warmbrown">100% Hypoallergenic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layer-info-3" class="layer-info hidden space-y-6">
+                        <span class="inline-block px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold uppercase tracking-wider">Structure Layer</span>
+                        <h3 class="text-3xl font-serif font-bold text-warmbrown">Organic Cotton Core</h3>
+                        <p class="text-warmbrown/80 leading-relaxed">
+                            A tightly woven GOTS-certified organic cotton middle grid ensures structural durability, preventing bunching or shifting through hundreds of washes.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-warmbeige">
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Durability</p>
+                                <p class="font-semibold text-warmbrown">Reinforced Cross-Weave</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Certification</p>
+                                <p class="font-semibold text-warmbrown">GOTS Certified</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layer-info-4" class="layer-info hidden space-y-6">
+                        <span class="inline-block px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold uppercase tracking-wider">Bottom Layer</span>
+                        <h3 class="text-3xl font-serif font-bold text-warmbrown">Sherpa Lining Bottom</h3>
+                        <p class="text-warmbrown/80 leading-relaxed">
+                            Luxuriously plush vegan shearling fleece on the reverse side instantly warms up against your skin on chilly winter nights while remaining breathable.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-warmbeige">
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Warmth Index</p>
+                                <p class="font-semibold text-warmbrown">Maximum Winter Grade</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-warmbrown/60">Cruelty-Free</p>
+                                <p class="font-semibold text-warmbrown">100% Vegan Fleece</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="catalog" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-terracotta text-sm font-semibold tracking-widest uppercase">Our Masterpieces</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-warmbrown mt-2">The Blanket Catalog</h2>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <button onclick="filterCatalog('All')" class="filter-btn active-filter px-5 py-2 rounded-full text-sm font-medium bg-warmbrown text-cream transition-all shadow-sm">All</button>
+                    <button onclick="filterCatalog('Nordic')" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-warmbeige text-warmbrown hover:bg-sand transition-all">Nordic</button>
+                    <button onclick="filterCatalog('Boho')" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-warmbeige text-warmbrown hover:bg-sand transition-all">Boho</button>
+                    <button onclick="filterCatalog('Cabin')" class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-warmbeige text-warmbrown hover:bg-sand transition-all">Cabin</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card group bg-warmbeige/20 rounded-3xl border border-warmbeige overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Nordic">
+                    <div class="relative h-72 overflow-hidden bg-sand/30">
+                        <img src="https://placehold.co/600x600/E3D5CA/4A3B32?text=Stockholm+Cloud" alt="Stockholm Cloud Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cream text-warmbrown text-xs font-semibold px-3 py-1 rounded-full shadow">Best Seller</span>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-cream text-warmbrown flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors" title="Quick View">
+                            <i class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmbrown">Stockholm Cloud Throw</h3>
+                            <span class="text-terracotta font-serif font-bold text-lg">$145</span>
+                        </div>
+                        <p class="text-warmbrown/70 text-xs mb-4">Minimalist Nordic waffle weave with ultra-soft organic cotton.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-warmbeige">
+                            <span class="text-xs text-warmbrown/60 flex items-center"><i class="fa-solid fa-star text-amber-500 mr-1"></i> 4.9 (420 reviews)</span>
+                            <button onclick="openPurchaseModal('Stockholm Cloud Throw', '$145')" class="px-4 py-2 rounded-full bg-warmbrown text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                Select Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card group bg-warmbeige/20 rounded-3xl border border-warmbeige overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Boho">
+                    <div class="relative h-72 overflow-hidden bg-sand/30">
+                        <img src="https://placehold.co/600x600/D5896F/FFFFFF?text=Sahara+Fringe" alt="Sahara Fringe Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cream text-warmbrown text-xs font-semibold px-3 py-1 rounded-full shadow">New Arrival</span>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-cream text-warmbrown flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors" title="Quick View">
+                            <i class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmbrown">Sahara Fringe Throw</h3>
+                            <span class="text-terracotta font-serif font-bold text-lg">$160</span>
+                        </div>
+                        <p class="text-warmbrown/70 text-xs mb-4">Boho Chic terracotta tones with artisanal hand-knotted fringe ends.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-warmbeige">
+                            <span class="text-xs text-warmbrown/60 flex items-center"><i class="fa-solid fa-star text-amber-500 mr-1"></i> 4.8 (190 reviews)</span>
+                            <button onclick="openPurchaseModal('Sahara Fringe Throw', '$160')" class="px-4 py-2 rounded-full bg-warmbrown text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                Select Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card group bg-warmbeige/20 rounded-3xl border border-warmbeige overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Cabin">
+                    <div class="relative h-72 overflow-hidden bg-sand/30">
+                        <img src="https://placehold.co/600x600/4A3B32/FFFFFF?text=Highland+Sherpa" alt="Highland Sherpa Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cream text-warmbrown text-xs font-semibold px-3 py-1 rounded-full shadow">Winter Favorite</span>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-cream text-warmbrown flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors" title="Quick View">
+                            <i class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmbrown">Highland Heavy Sherpa</h3>
+                            <span class="text-terracotta font-serif font-bold text-lg">$195</span>
+                        </div>
+                        <p class="text-warmbrown/70 text-xs mb-4">Cozy Cabin dual-layer heavyweight sherpa insulation for freezing nights.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-warmbeige">
+                            <span class="text-xs text-warmbrown/60 flex items-center"><i class="fa-solid fa-star text-amber-500 mr-1"></i> 5.0 (680 reviews)</span>
+                            <button onclick="openPurchaseModal('Highland Heavy Sherpa', '$195')" class="px-4 py-2 rounded-full bg-warmbrown text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                Select Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card group bg-warmbeige/20 rounded-3xl border border-warmbeige overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Nordic">
+                    <div class="relative h-72 overflow-hidden bg-sand/30">
+                        <img src="https://placehold.co/600x600/F5EBE0/4A3B32?text=Fjord+Cashmere" alt="Fjord Cashmere Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cream text-warmbrown text-xs font-semibold px-3 py-1 rounded-full shadow">Limited Edition</span>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-cream text-warmbrown flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors" title="Quick View">
+                            <i class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmbrown">Fjord Cashmere Touch</h3>
+                            <span class="text-terracotta font-serif font-bold text-lg">$220</span>
+                        </div>
+                        <p class="text-warmbrown/70 text-xs mb-4">Supreme softness with silk-spun organic modal and minimalist aesthetic.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-warmbeige">
+                            <span class="text-xs text-warmbrown/60 flex items-center"><i class="fa-solid fa-star text-amber-500 mr-1"></i> 4.9 (310 reviews)</span>
+                            <button onclick="openPurchaseModal('Fjord Cashmere Touch', '$220')" class="px-4 py-2 rounded-full bg-warmbrown text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                Select Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card group bg-warmbeige/20 rounded-3xl border border-warmbeige overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Boho">
+                    <div class="relative h-72 overflow-hidden bg-sand/30">
+                        <img src="https://placehold.co/600x600/E8A87C/FFFFFF?text=Tulum+Sun" alt="Tulum Sun Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cream text-warmbrown text-xs font-semibold px-3 py-1 rounded-full shadow">Popular</span>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-cream text-warmbrown flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors" title="Quick View">
+                            <i class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmbrown">Tulum Sun Tapestry</h3>
+                            <span class="text-terracotta font-serif font-bold text-lg">$175</span>
+                        </div>
+                        <p class="text-warmbrown/70 text-xs mb-4">Vibrant boho patterns and sun-washed terracotta shades for creative living rooms.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-warmbeige">
+                            <span class="text-xs text-warmbrown/60 flex items-center"><i class="fa-solid fa-star text-amber-500 mr-1"></i> 4.8 (240 reviews)</span>
+                            <button onclick="openPurchaseModal('Tulum Sun Tapestry', '$175')" class="px-4 py-2 rounded-full bg-warmbrown text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                Select Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card group bg-warmbeige/20 rounded-3xl border border-warmbeige overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Cabin">
+                    <div class="relative h-72 overflow-hidden bg-sand/30">
+                        <img src="https://placehold.co/600x600/5C4033/FFFFFF?text=Alpine+Forest" alt="Alpine Forest Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-cream text-warmbrown text-xs font-semibold px-3 py-1 rounded-full shadow">Exclusive</span>
+                        <button class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-cream text-warmbrown flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors" title="Quick View">
+                            <i class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmbrown">Alpine Forest Plaid</h3>
+                            <span class="text-terracotta font-serif font-bold text-lg">$185</span>
+                        </div>
+                        <p class="text-warmbrown/70 text-xs mb-4">Deep earthy forest greens and charcoal plaid pattern with cozy fleece lining.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-warmbeige">
+                            <span class="text-xs text-warmbrown/60 flex items-center"><i class="fa-solid fa-star text-amber-500 mr-1"></i> 4.9 (415 reviews)</span>
+                            <button onclick="openPurchaseModal('Alpine Forest Plaid', '$185')" class="px-4 py-2 rounded-full bg-warmbrown text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                Select Size
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive User Registration / VIP Signup Section -->
+    <section id="vip-signup" class="py-24 bg-gradient-to-t from-warmbeige/60 to-cream relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-cream border-2 border-warmbeige rounded-3xl shadow-2xl p-8 sm:p-12 relative overflow-hidden">
+                <!-- Background ambient decorative circles -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-terracotta/10 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-sand rounded-full blur-2xl"></div>
+
+                <div class="text-center max-w-lg mx-auto mb-10 relative z-10">
+                    <span class="text-terracotta text-sm font-semibold tracking-widest uppercase">Join the Inner Circle</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-warmbrown mt-2">Become a Plush & Loom VIP</h2>
+                    <p class="text-warmbrown/70 text-sm mt-3">Sign up today to receive $25 off your first luxury blanket, early access to seasonal theme drops, and invitations to private wool auctions.</p>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="vip-form" onsubmit="handleVipSubmit(event)" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fullname" class="block text-xs font-semibold uppercase tracking-wider text-warmbrown mb-2">Full Name</label>
+                            <input type="text" id="fullname" required placeholder="Eleanor Vance" class="w-full px-5 py-3.5 rounded-2xl bg-warmbeige/40 border border-warmbeige text-warmbrown placeholder-warmbrown/40 focus:outline-none focus:border-terracotta transition-colors">
+                            <p id="error-name" class="text-xs text-red-500 mt-1 hidden">Please enter your full name.</p>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-warmbrown mb-2">Email Address</label>
+                            <input type="email" id="email" required placeholder="eleanor@example.com" class="w-full px-5 py-3.5 rounded-2xl bg-warmbeige/40 border border-warmbeige text-warmbrown placeholder-warmbrown/40 focus:outline-none focus:border-terracotta transition-colors">
+                            <p id="error-email" class="text-xs text-red-500 mt-1 hidden">Please enter a valid email address.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="favorite-theme" class="block text-xs font-semibold uppercase tracking-wider text-warmbrown mb-2">Favorite Design Theme</label>
+                            <select id="favorite-theme" class="w-full px-5 py-3.5 rounded-2xl bg-warmbeige/40 border border-warmbeige text-warmbrown focus:outline-none focus:border-terracotta transition-colors">
+                                <option value="Nordic">Minimalist Nordic</option>
+                                <option value="Boho">Boho Chic</option>
+                                <option value="Cabin">Cozy Cabin</option>
+                                <option value="All">Surprise Me / All Themes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="preferred-size" class="block text-xs font-semibold uppercase tracking-wider text-warmbrown mb-2">Preferred Blanket Size</label>
+                            <select id="preferred-size" class="w-full px-5 py-3.5 rounded-2xl bg-warmbeige/40 border border-warmbeige text-warmbrown focus:outline-none focus:border-terracotta transition-colors">
+                                <option value="Throw">Standard Throw (50" x 60")</option>
+                                <option value="Queen">Queen Size (90" x 90")</option>
+                                <option value="King">King Size (108" x 90")</option>
+                                <option value="Oversized">Oversized Family (120" x 100")</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3 pt-2">
+                        <input type="checkbox" id="terms" required class="w-5 h-5 rounded text-terracotta border-warmbeige focus:ring-terracotta">
+                        <label for="terms" class="text-xs text-warmbrown/80">I agree to receive VIP circulars and exclusive offers. Unsubscribe anytime.</label>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full py-4 rounded-2xl bg-terracotta text-white font-semibold tracking-wide hover:bg-warmbrown transition-all shadow-md text-base">
+                            Claim My $25 VIP Welcome Gift
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message Box (Hidden by default) -->
+                <div id="success-box" class="hidden text-center py-12 space-y-6 relative z-10">
+                    <div class="w-20 h-20 rounded-full bg-terracotta/10 text-terracotta mx-auto flex items-center justify-center text-3xl">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-warmbrown">Welcome to the Inner Circle!</h3>
+                    <p class="text-warmbrown/70 max-w-md mx-auto text-sm">
+                        Thank you for joining, <span id="success-name" class="font-bold text-warmbrown"></span>! Your $25 welcome coupon code <span class="font-mono bg-warmbeige px-2 py-1 rounded text-terracotta font-bold">PLUSHVIP25</span> has been sent to <span id="success-email" class="font-bold text-warmbrown"></span>.
+                    </p>
+                    <button onclick="resetVipForm()" class="px-8 py-3 rounded-full bg-warmbrown text-cream text-sm font-medium hover:bg-terracotta transition-colors">
+                        Register Another Member
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-warmbrown text-cream py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 text-2xl font-serif font-bold">
+                        <span class="w-8 h-8 rounded-full bg-terracotta inline-flex items-center justify-center text-white text-sm"><i class="fa-solid fa-feather"></i></span>
+                        Plush & Loom
+                    </div>
+                    <p class="text-xs text-cream/70 leading-relaxed">
+                        Handcrafted luxury blankets designed for mindful living, sustainable warmth, and uncompromising comfort.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors"><i class="fa-brands fa-pinterest text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-base mb-4 text-softamber">Collections</h4>
+                    <ul class="space-y-2.5 text-xs text-cream/70">
+                        <li><a href="#catalog" class="hover:text-terracotta transition-colors">Minimalist Nordic</a></li>
+                        <li><a href="#catalog" class="hover:text-terracotta transition-colors">Boho Chic</a></li>
+                        <li><a href="#catalog" class="hover:text-terracotta transition-colors">Cozy Cabin Sherpa</a></li>
+                        <li><a href="#catalog" class="hover:text-terracotta transition-colors">Cashmere Touch Series</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-base mb-4 text-softamber">Customer Care</h4>
+                    <ul class="space-y-2.5 text-xs text-cream/70">
+                        <li><a href="#" class="hover:text-terracotta transition-colors">Sustainable Sourcing</a></li>
+                        <li><a href="#" class="hover:text-terracotta transition-colors">Washing & Care Guide</a></li>
+                        <li><a href="#" class="hover:text-terracotta transition-colors">Global Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-terracotta transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-base mb-4 text-softamber">Visit Our Flagship</h4>
+                    <p class="text-xs text-cream/70 leading-relaxed">
+                        452 Artisan Way, Suite 100<br>
+                        Portland, OR 97201<br>
+                        Mon - Sat: 10am - 7pm
+                    </p>
+                    <p class="text-xs text-softamber mt-4 font-medium">concierge@plushandloom.com</p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/55">
+                <p>&copy; 2026 Plush & Loom Inc. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-cream transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-cream transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-cream transition-colors">Cookie Preferences</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Purchase / Quick View Modal -->
+    <div id="purchase-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-warmbrown/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-cream rounded-3xl max-w-lg w-full p-8 relative shadow-2xl border border-warmbeige animate-in fade-in zoom-in duration-200">
+            <button onclick="closePurchaseModal()" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-warmbeige text-warmbrown flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="space-y-4">
+                <span id="modal-tag" class="text-xs font-semibold text-terracotta uppercase tracking-wider">Quick Order</span>
+                <h3 id="modal-title" class="text-2xl font-serif font-bold text-warmbrown">Product Name</h3>
+                <p id="modal-price" class="text-xl font-serif font-bold text-terracotta">$145</p>
+                <p class="text-xs text-warmbrown/70">Select your preferred blanket size and add this luxury item to your cart.</p>
+                
+                <div class="space-y-3 pt-2">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-warmbrown">Select Size</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button class="size-option py-2.5 rounded-xl border border-warmbeige text-xs font-medium hover:border-terracotta hover:bg-warmbeige/50 focus:border-terracotta focus:bg-warmbeige transition-all active">Standard (50x60)</button>
+                        <button class="size-option py-2.5 rounded-xl border border-warmbeige text-xs font-medium hover:border-terracotta hover:bg-warmbeige/50 focus:border-terracotta focus:bg-warmbeige transition-all">Queen (90x90)</button>
+                        <button class="size-option py-2.5 rounded-xl border border-warmbeige text-xs font-medium hover:border-terracotta hover:bg-warmbeige/50 focus:border-terracotta focus:bg-warmbeige transition-all">King (108x90)</button>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="confirmPurchase()" class="w-full py-3.5 rounded-2xl bg-terracotta text-white font-semibold text-sm hover:bg-warmbrown transition-all shadow-md">
+                        Proceed to Secure Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Blanket Anatomy Diagram
+        function selectLayer(layerNum) {
+            // Reset all cards
+            for (let i = 1; i <= 4; i++) {
+                const card = document.getElementById(`layer-card-${i}`);
+                const info = document.getElementById(`layer-info-${i}`);
+                
+                if (i === layerNum) {
+                    card.classList.remove('border-transparent', 'shadow-sm');
+                    card.classList.add('border-terracotta', 'shadow-md');
+                    card.querySelector('.w-10').classList.remove('bg-warmbeige', 'text-warmbrown');
+                    card.querySelector('.w-10').classList.add('bg-terracotta', 'text-white');
+                    card.querySelector('.layer-arrow').classList.remove('text-warmbrown/40');
+                    card.querySelector('.layer-arrow').classList.add('text-terracotta');
+                    info.classList.remove('hidden');
+                } else {
+                    card.classList.add('border-transparent', 'shadow-sm');
+                    card.classList.remove('border-terracotta', 'shadow-md');
+                    card.querySelector('.w-10').classList.add('bg-warmbeige', 'text-warmbrown');
+                    card.querySelector('.w-10').classList.remove('bg-terracotta', 'text-white');
+                    card.querySelector('.layer-arrow').classList.add('text-warmbrown/40');
+                    card.querySelector('.layer-arrow').classList.remove('text-terracotta');
+                    info.classList.add('hidden');
+                }
+            }
+        }
+
+        // Product Catalog Filter
+        function filterCatalog(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(category) || (category === 'All' && btn.textContent === 'All')) {
+                    btn.classList.add('bg-warmbrown', 'text-cream');
+                    btn.classList.remove('bg-warmbeige', 'text-warmbrown');
+                } else {
+                    btn.classList.remove('bg-warmbrown', 'text-cream');
+                    btn.classList.add('bg-warmbeige', 'text-warmbrown');
+                }
+            });
+
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                const productCategory = product.getAttribute('data-category');
+                if (category === 'All' || productCategory === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Purchase Modal Logic
+        function openPurchaseModal(productName, price) {
+            document.getElementById('modal-title').textContent = productName;
+            document.getElementById('modal-price').textContent = price;
+            document.getElementById('purchase-modal').classList.remove('hidden');
+        }
+
+        function closePurchaseModal() {
+            document.getElementById('purchase-modal').classList.add('hidden');
+        }
+
+        function confirmPurchase() {
+            closePurchaseModal();
+            // Custom polite message box instead of alert()
+            const msgBox = document.createElement('div');
+            msgBox.className = 'fixed bottom-8 right-8 z-50 bg-warmbrown text-cream px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 animate-in slide-in-from-bottom duration-300';
+            msgBox.innerHTML = '<i class="fa-solid fa-bag-shopping text-terracotta text-xl"></i><div><p class="font-serif font-bold text-sm">Added to Cart!</p><p class="text-xs text-cream/70">Proceeding to secure checkout...</p></div>';
+            document.body.appendChild(msgBox);
+            setTimeout(() => {
+                msgBox.remove();
+            }, 3500);
+        }
+
+        // VIP Registration Form Validation & Success Handling
+        function handleVipSubmit(event) {
+            event.preventDefault();
+            
+            const nameInput = document.getElementById('fullname');
+            const emailInput = document.getElementById('email');
+            const errorName = document.getElementById('error-name');
+            const errorEmail = document.getElementById('error-email');
+            
+            let isValid = true;
+
+            if (!nameInput.value.trim()) {
+                errorName.classList.remove('hidden');
+                isValid = false;
+            } else {
+                errorName.classList.add('hidden');
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                errorEmail.classList.remove('hidden');
+                isValid = false;
+            } else {
+                errorEmail.classList.add('hidden');
+            }
+
+            if (isValid) {
+                document.getElementById('success-name').textContent = nameInput.value;
+                document.getElementById('success-email').textContent = emailInput.value;
+                document.getElementById('vip-form').classList.add('hidden');
+                document.getElementById('success-box').classList.remove('hidden');
+            }
+        }
+
+        function resetVipForm() {
+            document.getElementById('vip-form').reset();
+            document.getElementById('vip-form').classList.remove('hidden');
+            document.getElementById('success-box').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
