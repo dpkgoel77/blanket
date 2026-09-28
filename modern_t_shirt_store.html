@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLLECTIV — Modern Cut T-Shirts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f4f5',
+                            100: '#e4e4e7',
+                            800: '#27272a',
+                            900: '#18181b',
+                            950: '#09090b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and smooth transitions */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1aa;
+        }
+        .fade-in {
+            animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased selection:bg-brand-900 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-2xl font-bold tracking-tighter text-brand-950 uppercase">
+                    KOLLECTIV<span class="text-zinc-400">.</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-brand-800">
+                    <a href="#shop" class="hover:text-black transition-colors">Shop All</a>
+                    <a href="#fits" class="hover:text-black transition-colors">Fit Guide</a>
+                    <a href="#sizing-tool" class="hover:text-black transition-colors">Interactive Sizing</a>
+                    <a href="#about" class="hover:text-black transition-colors">Philosophy</a>
+                </nav>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="openSizeGuide()" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider bg-brand-100 hover:bg-brand-200 px-3 py-2 rounded-full transition-colors">
+                    <i class="fa-solid fa-ruler-combined"></i> Size Finder
+                </button>
+                <button onclick="toggleCart()" class="relative p-3 rounded-full bg-brand-900 text-white hover:bg-brand-950 transition-colors flex items-center justify-center">
+                    <i class="fa-solid fa-bag-shopping text-sm"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-zinc-700 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-brand-950 text-white py-24 sm:py-32">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3f3f46_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="inline-block text-xs font-semibold tracking-widest uppercase bg-zinc-800 text-zinc-300 px-3 py-1 rounded-full">
+                    Modern Proportions • Heavyweight Cotton
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-bold tracking-tight leading-tight">
+                    Redefining the <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">Modern Silhouette.</span>
+                </h1>
+                <p class="text-zinc-400 text-lg max-w-lg leading-relaxed">
+                    Engineered fits designed for contemporary proportions. Drop shoulders, boxy cuts, and tailored necklines crafted from ultra-luxurious 280GSM organic cotton.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#shop" class="bg-white text-brand-950 font-semibold px-8 py-4 rounded-full hover:bg-zinc-200 transition-all shadow-lg flex items-center gap-3">
+                        Explore Collection <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="#sizing-tool" class="border border-zinc-700 hover:border-zinc-500 text-white font-semibold px-8 py-4 rounded-full transition-all">
+                        Find Your Fit
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80" alt="Modern fit t-shirt" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/18181b/ffffff?text=KOLLECTIV+TEE'">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span class="text-xs font-semibold text-zinc-300 tracking-wider uppercase">Signature Fit</span>
+                    </div>
+                    <p class="text-xs text-zinc-400">The "Boxy Oversized" cut features a cropped hem and elongated sleeves for pristine drape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter & Shop Section -->
+    <section id="shop" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <span class="text-xs font-semibold uppercase tracking-widest text-zinc-500">The Catalog</span>
+                <h2 class="text-3xl font-bold tracking-tight text-brand-950 mt-1">Curated Modern Fits</h2>
+            </div>
+            
+            <!-- Fit Filters -->
+            <div class="flex flex-wrap gap-2 bg-white p-1.5 rounded-2xl border border-brand-100 shadow-sm" id="fit-filters">
+                <button onclick="filterProducts('all')" class="fit-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all bg-brand-950 text-white shadow-sm" data-fit="all">All Fits</button>
+                <button onclick="filterProducts('Oversized')" class="fit-btn px-5 py-2.5 rounded-xl text-sm font-medium text-brand-800 hover:text-black transition-all" data-fit="Oversized">Oversized</button>
+                <button onclick="filterProducts('Relaxed')" class="fit-btn px-5 py-2.5 rounded-xl text-sm font-medium text-brand-800 hover:text-black transition-all" data-fit="Relaxed">Relaxed</button>
+                <button onclick="filterProducts('Slim')" class="fit-btn px-5 py-2.5 rounded-xl text-sm font-medium text-brand-800 hover:text-black transition-all" data-fit="Slim">Slim</button>
+                <button onclick="filterProducts('Athletic')" class="fit-btn px-5 py-2.5 rounded-xl text-sm font-medium text-brand-800 hover:text-black transition-all" data-fit="Athletic">Athletic</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Injected via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Interactive Sizing Tool Section -->
+    <section id="sizing-tool" class="bg-white border-y border-brand-100 py-20 my-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Precision Tool</span>
+                <h2 class="text-3xl font-bold tracking-tight text-brand-950 mt-1">Interactive Size Guide</h2>
+                <p class="text-zinc-600 text-sm mt-2">Enter your height and weight to calculate your ideal modern proportion size across our various cuts.</p>
+            </div>
+
+            <div class="bg-brand-50 p-8 sm:p-10 rounded-3xl border border-brand-100 shadow-inner grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-2">Height: <span id="height-val" class="font-normal text-zinc-600">178 cm (5'10")</span></label>
+                        <input type="range" id="height-input" min="150" max="200" value="178" oninput="calculateSize()" class="w-full accent-brand-950 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-2">Weight: <span id="weight-val" class="font-normal text-zinc-600">75 kg (165 lbs)</span></label>
+                        <input type="range" id="weight-input" min="50" max="130" value="75" oninput="calculateSize()" class="w-full accent-brand-950 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-2">Preferred Fit Vibe</label>
+                        <select id="vibe-select" onchange="calculateSize()" class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-950">
+                            <option value="standard">True to Modern Fit (Balanced)</option>
+                            <option value="extra-boxy">Extreme Boxy / Streetwear</option>
+                            <option value="fitted">Clean Tailored / Slim</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-brand-950 text-white p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 shadow-xl">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-zinc-400">Your Recommended Size</span>
+                    <div id="result-size" class="text-5xl font-extrabold tracking-tight text-white">L</div>
+                    <p id="result-desc" class="text-xs text-zinc-300 max-w-xs leading-relaxed">
+                        Offers the signature modern drape with a slightly dropped shoulder and relaxed body width.
+                    </p>
+                    <button onclick="applyRecommendedSize()" class="mt-2 bg-white text-brand-950 font-semibold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-zinc-200 transition-colors">
+                        Filter Products by Size
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fit Explainer Grid -->
+    <section id="fits" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Anatomy of Fit</span>
+            <h2 class="text-3xl font-bold tracking-tight text-brand-950 mt-1">Understanding Modern Sizing</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-950 font-bold text-lg">01</div>
+                <h3 class="font-bold text-lg text-brand-950">Oversized</h3>
+                <p class="text-xs text-zinc-600 leading-relaxed">Generous chest volume, dropped armholes, and structured collar. Designed to stack effortlessly.</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-950 font-bold text-lg">02</div>
+                <h3 class="font-bold text-lg text-brand-950">Relaxed</h3>
+                <p class="text-xs text-zinc-600 leading-relaxed">The everyday standard. Slightly looser than classic retail fits without looking sloppy.</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-950 font-bold text-lg">03</div>
+                <h3 class="font-bold text-lg text-brand-950">Slim</h3>
+                <p class="text-xs text-zinc-600 leading-relaxed">Contoured through the torso and biceps for a sharp, refined silhouette under jackets.</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-950 font-bold text-lg">04</div>
+                <h3 class="font-bold text-lg text-brand-950">Athletic</h3>
+                <p class="text-xs text-zinc-600 leading-relaxed">Engineered with extra room across the chest and shoulders tapering sharply down to the waist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 border-b border-brand-100 flex items-center justify-between">
+                    <h2 class="text-lg font-bold text-brand-950">Your Shopping Bag (<span id="cart-count-header">0</span>)</h2>
+                    <button onclick="toggleCart()" class="p-2 text-zinc-400 hover:text-black rounded-full">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-zinc-100">
+                    <!-- Cart items injected here -->
+                </div>
+
+                <div class="p-6 border-t border-brand-100 bg-brand-50 space-y-4">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-zinc-600">Subtotal</span>
+                        <span id="cart-subtotal" class="font-bold text-brand-950">$0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-zinc-600">Shipping</span>
+                        <span class="font-semibold text-emerald-600">FREE</span>
+                    </div>
+                    <div class="border-t border-brand-200 pt-4 flex justify-between items-center text-base font-bold">
+                        <span>Total</span>
+                        <span id="cart-total" class="text-xl">$0.00</span>
+                    </div>
+                    <button onclick="openCheckoutModal()" id="checkout-btn" class="w-full bg-brand-950 text-white font-semibold py-4 rounded-2xl hover:bg-zinc-800 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeCheckoutModal()"></div>
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 relative z-10 shadow-2xl space-y-6 fade-in">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-brand-950">Secure Checkout</h3>
+                <button onclick="closeCheckoutModal()" class="text-zinc-400 hover:text-black">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <form onsubmit="handleCheckout(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-1">Full Name</label>
+                    <input type="text" required placeholder="Alex Morgan" class="w-full bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-950">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-1">Email Address</label>
+                    <input type="email" required placeholder="alex@example.com" class="w-full bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-950">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-1">Shipping Address</label>
+                    <input type="text" required placeholder="123 Modernist Way, Suite 4B" class="w-full bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-950">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-1">City</label>
+                        <input type="text" required placeholder="New York" class="w-full bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-950">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-900 mb-1">Postal Code</label>
+                        <input type="text" required placeholder="10001" class="w-full bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-950">
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-brand-950 text-white font-bold py-4 rounded-2xl hover:bg-zinc-800 transition-colors shadow-lg">
+                        Complete Order • <span id="modal-total-price">$0.00</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Size Guide Modal -->
+    <div id="size-guide-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeSizeGuide()"></div>
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-8 relative z-10 shadow-2xl space-y-6 fade-in">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-brand-950">Comprehensive Size & Fit Chart</h3>
+                <button onclick="closeSizeGuide()" class="text-zinc-400 hover:text-black">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-zinc-600">
+                    <thead class="bg-brand-50 text-brand-950 uppercase text-[10px] tracking-wider">
+                        <tr>
+                            <th class="p-3 rounded-l-xl">Size</th>
+                            <th class="p-3">Chest (in)</th>
+                            <th class="p-3">Length (in)</th>
+                            <th class="p-3 rounded-r-xl">Recommended Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-100">
+                        <tr>
+                            <td class="p-3 font-bold text-brand-950">S</td>
+                            <td class="p-3">38 - 40"</td>
+                            <td class="p-3">27.5"</td>
+                            <td class="p-3">55 - 65 kg</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-brand-950">M</td>
+                            <td class="p-3">41 - 43"</td>
+                            <td class="p-3">28.5"</td>
+                            <td class="p-3">65 - 75 kg</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-brand-950">L</td>
+                            <td class="p-3">44 - 46"</td>
+                            <td class="p-3">29.5"</td>
+                            <td class="p-3">75 - 88 kg</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-brand-950">XL</td>
+                            <td class="p-3">47 - 49"</td>
+                            <td class="p-3">30.5"</td>
+                            <td class="p-3">88 - 105 kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-zinc-500">Note: All our garments are pre-shrunk with enzyme washing for an ultra-soft hand feel and zero post-wash shrinkage.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-brand-950 text-white border-t border-zinc-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="space-y-4">
+                <span class="text-2xl font-bold tracking-tighter uppercase">KOLLECTIV.</span>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                    Elevating staple silhouettes through precision tailoring, heavyweight textiles, and modern proportions.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-4">Navigation</h4>
+                <ul class="space-y-2 text-xs text-zinc-400">
+                    <li><a href="#shop" class="hover:text-white transition-colors">Catalog</a></li>
+                    <li><a href="#fits" class="hover:text-white transition-colors">Fit System</a></li>
+                    <li><a href="#sizing-tool" class="hover:text-white transition-colors">Interactive Sizing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-4">Customer Care</h4>
+                <ul class="space-y-2 text-xs text-zinc-400">
+                    <li><a href="#" onclick="openSizeGuide(); return false;" class="hover:text-white transition-colors">Size & Fit Guide</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-4">Stay Updated</h4>
+                <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" class="space-y-2">
+                    <input type="email" placeholder="Enter your email" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-white">
+                    <button type="submit" class="w-full bg-white text-brand-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-zinc-200 transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-zinc-900 text-center text-xs text-zinc-600">
+            &copy; 2026 KOLLECTIV STUDIOS. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Product Catalog Database
+        const products = [
+            {
+                id: 1,
+                name: "The Heavyweight Boxy Tee",
+                fit: "Oversized",
+                price: 58.00,
+                rating: 4.9,
+                reviews: 128,
+                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+                colors: [
+                    { name: "Onyx Black", hex: "#18181b" },
+                    { name: "Chalk White", hex: "#f4f4f5" },
+                    { name: "Sage Green", hex: "#52523b" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 2,
+                name: "Architectural Relaxed Tee",
+                fit: "Relaxed",
+                price: 52.00,
+                rating: 4.8,
+                reviews: 94,
+                image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
+                colors: [
+                    { name: "Charcoal", hex: "#27272a" },
+                    { name: "Vintage Wash", hex: "#71717a" },
+                    { name: "Sand", hex: "#d4d4d8" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 3,
+                name: "Precision Tailored Slim Tee",
+                fit: "Slim",
+                price: 48.00,
+                rating: 4.7,
+                reviews: 76,
+                image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+                colors: [
+                    { name: "Jet Black", hex: "#09090b" },
+                    { name: "Pure White", hex: "#ffffff" }
+                ],
+                sizes: ["S", "M", "L"]
+            },
+            {
+                id: 4,
+                name: "Anatomical Athletic Cut Tee",
+                fit: "Athletic",
+                price: 55.00,
+                rating: 4.9,
+                reviews: 112,
+                image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+                colors: [
+                    { name: "Navy Blue", hex: "#1e1b4b" },
+                    { name: "Graphite", hex: "#3f3f46" }
+                ],
+                sizes: ["M", "L", "XL"]
+            },
+            {
+                id: 5,
+                name: "The Raw Edge Boxy Tee",
+                fit: "Oversized",
+                price: 60.00,
+                rating: 5.0,
+                reviews: 53,
+                image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80",
+                colors: [
+                    { name: "Washed Black", hex: "#27272a" },
+                    { name: "Off White", hex: "#fafafa" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 6,
+                name: "Minimalist Daily Relaxed Tee",
+                fit: "Relaxed",
+                price: 49.00,
+                rating: 4.8,
+                reviews: 89,
+                image: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=800&q=80",
+                colors: [
+                    { name: "Heather Grey", hex: "#a1a1aa" },
+                    { name: "Espresso", hex: "#292524" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            }
+        ];
+
+        // Shopping Cart State
+        let cart = [];
+        let selectedSizes = {};
+        let selectedColors = {};
+
+        // Render products grid
+        function renderProducts(itemsToRender = products) {
+            const grid = document.getElementById('product-grid');
+            if (itemsToRender.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-16 text-center text-zinc-500">No t-shirts match the selected fit criteria.</div>`;
+                return;
+            }
+
+            grid.innerHTML = itemsToRender.map(product => {
+                const currentSize = selectedSizes[product.id] || product.sizes[0];
+                const currentColor = selectedColors[product.id] || product.colors[0].name;
+
+                return `
+                    <div class="group bg-white rounded-3xl border border-brand-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative aspect-[4/5] bg-brand-50 overflow-hidden">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x800/18181b/ffffff?text=KOLLECTIV'">
+                                <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-brand-950 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                    ${product.fit} Fit
+                                </span>
+                            </div>
+                            
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1 text-xs text-amber-500 font-bold">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span>${product.rating}</span>
+                                        <span class="text-zinc-400 font-normal">(${product.reviews})</span>
+                                    </div>
+                                    <span class="font-bold text-lg text-brand-950">$${product.price.toFixed(2)}</span>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-bold text-brand-950 text-base">${product.name}</h3>
+                                    <p class="text-xs text-zinc-500 mt-1">280GSM Heavyweight Organic Cotton</p>
+                                </div>
+
+                                <!-- Color Selectors -->
+                                <div class="space-y-1.5">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-zinc-400">Color: <span class="text-brand-950">${currentColor}</span></span>
+                                    <div class="flex gap-2">
+                                        ${product.colors.map(col => `
+                                            <button onclick="selectColor(${product.id}, '${col.name}')" 
+                                                class="w-6 h-6 rounded-full border-2 transition-transform ${currentColor === col.name ? 'border-brand-950 scale-110 shadow-sm' : 'border-transparent opacity-70 hover:opacity-100'}" 
+                                                style="background-color: ${col.hex};" 
+                                                title="${col.name}"></button>
+                                        `).join('')}
+                                    </div>
+                                </div>
+
+                                <!-- Size Selector -->
+                                <div class="space-y-1.5">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[10px] font-bold uppercase tracking-wider text-zinc-400">Select Size</span>
+                                        <button onclick="openSizeGuide()" class="text-[10px] underline text-zinc-500 hover:text-black">Fit Chart</button>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        ${product.sizes.map(size => `
+                                            <button onclick="selectSize(${product.id}, '${size}')" 
+                                                class="flex-1 py-2 rounded-xl text-xs font-bold uppercase transition-all border ${currentSize === size ? 'bg-brand-950 text-white border-brand-950 shadow-sm' : 'bg-brand-50 text-brand-800 border-brand-100 hover:border-brand-300'}">
+                                                ${size}
+                                            </button>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <button onclick="addToCart(${product.id})" class="w-full bg-brand-100 hover:bg-brand-950 hover:text-white text-brand-950 font-semibold text-xs uppercase tracking-wider py-3.5 rounded-2xl transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bag-shopping text-xs"></i> Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Filter products by fit
+        function filterProducts(fit) {
+            document.querySelectorAll('.fit-btn').forEach(btn => {
+                if (btn.dataset.fit === fit) {
+                    btn.className = "fit-btn px-5 py-2.5 rounded-xl text-sm font-medium transition-all bg-brand-950 text-white shadow-sm";
+                } else {
+                    btn.className = "fit-btn px-5 py-2.5 rounded-xl text-sm font-medium text-brand-800 hover:text-black transition-all";
+                }
+            });
+
+            if (fit === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.fit === fit);
+                renderProducts(filtered);
+            }
+        }
+
+        // Color and size selection handlers
+        function selectColor(productId, colorName) {
+            selectedColors[productId] = colorName;
+            renderProducts();
+        }
+
+        function selectSize(productId, size) {
+            selectedSizes[productId] = size;
+            renderProducts();
+        }
+
+        // Cart Actions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const size = selectedSizes[productId] || product.sizes[0];
+            const color = selectedColors[productId] || product.colors[0].name;
+
+            const existingItem = cart.find(item => item.id === productId && item.size === size && item.color === color);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    cartId: Date.now() + Math.random(),
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    size: size,
+                    color: color,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            toggleCart();
+        }
+
+        function removeFromCart(cartId) {
+            cart = cart.filter(item => item.cartId !== cartId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cart-badge');
+            badge.innerText = count;
+            if (count > 0) {
+                badge.classList.remove('scale-0');
+                badge.classList.add('scale-100');
+            } else {
+                badge.classList.remove('scale-100');
+                badge.classList.add('scale-0');
+            }
+
+            document.getElementById('cart-count-header').innerText = count;
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="py-12 text-center text-zinc-400 text-sm">Your shopping bag is empty.</div>`;
+                document.getElementById('checkout-btn').setAttribute('disabled', 'true');
+            } else {
+                document.getElementById('checkout-btn').removeAttribute('disabled');
+                container.innerHTML = cart.map(item => `
+                    py-4 flex gap-4 items-center">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-20 object-cover rounded-xl bg-brand-50 border border-brand-100">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-950 text-sm">${item.name}</h4>
+                            <p class="text-xs text-zinc-500 mt-0.5">${item.color} / Size ${item.size}</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="font-bold text-brand-950 text-sm">$${item.price.toFixed(2)}</span>
+                                <span class="text-xs text-zinc-500">Qty: ${item.quantity}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.cartId})" class="text-zinc-400 hover:text-red-500 p-2">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('cart-subtotal').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-total').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('modal-total-price').innerText = `$${subtotal.toFixed(2)}`;
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // Interactive Sizing Tool Logic
+        function calculateSize() {
+            const height = parseInt(document.getElementById('height-input').value);
+            const weight = parseInt(document.getElementById('weight-input').value);
+            const vibe = document.getElementById('vibe-select').value;
+
+            document.getElementById('height-val').innerText = `${height} cm (${Math.floor(height / 30.48)}'${Math.round((height % 30.48) / 2.54)}")`;
+            document.getElementById('weight-val').innerText = `${weight} kg (${Math.round(weight * 2.20462)} lbs)`;
+
+            let bmiBase = weight / Math.pow(height / 100, 2);
+            let size = 'M';
+            let desc = '';
+
+            if (bmiBase < 20) {
+                size = vibe === 'extra-boxy' ? 'M' : 'S';
+                desc = 'Lean frame. Smaller sizes offer a tailored fit, while stepping up provides the modern dropped streetwear silhouette.';
+            } else if (bmiBase >= 20 && bmiBase < 24.5) {
+                size = vibe === 'extra-boxy' ? 'L' : (vibe === 'fitted' ? 'S' : 'M');
+                desc = 'Proportional modern frame. Perfect compatibility with our signature boxy cuts in standard sizing.';
+            } else if (bmiBase >= 24.5 && bmiBase < 28) {
+                size = vibe === 'fitted' ? 'M' : 'L';
+                desc = 'Athletic or solid build. Size L delivers ideal chest room without excess billowing at the waist.';
+            } else {
+                size = 'XL';
+                desc = 'Generous proportions. Size XL ensures unrestrictive shoulder mobility and contemporary drape.';
+            }
+
+            document.getElementById('result-size').innerText = size;
+            document.getElementById('result-desc').innerText = desc;
+        }
+
+        function applyRecommendedSize() {
+            const recommended = document.getElementById('result-size').innerText;
+            alert(`Filtered view or pre-selected size set to ${recommended}. Check product cards below.`);
+            window.scrollTo({ top: document.getElementById('shop').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        // Modals
+        function openSizeGuide() {
+            document.getElementById('size-guide-modal').classList.remove('hidden');
+        }
+        function closeSizeGuide() {
+            document.getElementById('size-guide-modal').classList.add('hidden');
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            toggleCart();
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function handleCheckout(e) {
+            e.preventDefault();
+            alert('Order placed successfully! Thank you for shopping with KOLLECTIV.');
+            cart = [];
+            updateCartUI();
+            closeCheckoutModal();
+        }
+
+        // Run on load
+        window.onload = function() {
+            renderProducts();
+            calculateSize();
+        };
+    </script>
+</body>
+</html>
